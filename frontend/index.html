@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simple Login</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="card">
-    <h1>Welcome Back</h1>
-    <p class="subtitle">Sign in to your account</p>
 
-    <form id="loginForm">
-      <label>Email</label>
-      <input type="email" id="email" required>
+  <div class="blob one"></div>
+  <div class="blob two"></div>
 
-      <label>Password</label>
-      <input type="password" id="password" required>
+  <div class="card">
+    <h1>Welcome back</h1>
+    <p class="sub">Log in to continue</p>
 
-      <button type="submit">Login</button>
-      <p id="message"></p>
+    <div class="error-msg" id="errorMsg">Please fill in both fields.</div>
+
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+
+      <div class="row">
+        <label><input type="checkbox" id="remember"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="submit">Log In</button>
     </form>
 
-    <p>Don't have an account? <a href="#" id="showRegister">Register</a></p>
+    <p class="footer-text">Don't have an account? <a href="#">Sign up</a></p>
+  </div>
 
-    <form id="registerForm" class="hidden">
-      <h2>Create Account</h2>
-      <label>Name</label>
-      <input type="text" id="name">
-
-      <label>Email</label>
-      <input type="email" id="regEmail">
-
-      <label>Password</label>
-      <input type="password" id="regPassword">
-
-      <button type="submit">Register</button>
-      <p id="registerMessage"></p>
-    </form>
-  </main>
-
-  <script src="app.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
